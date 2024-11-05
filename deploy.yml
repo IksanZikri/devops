@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+    - name: Copy index.html to Nginx directory
+      copy:
+        src: ~/my-web-app/index.html
+        dest: /var/www/html/index.html
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
